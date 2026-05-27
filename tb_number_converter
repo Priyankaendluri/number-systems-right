@@ -1,0 +1,64 @@
+module tb_number_converter;
+
+  reg  [7:0] num_in;
+  wire [7:0] out;
+
+  number_converter uut(
+    .num_in(num_in),
+    .out(out)
+  );
+
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, tb_number_converter);
+
+    $display("==================================");
+    $display("  Dec  |  Binary  |  Hex  |  Oct");
+    $display("==================================");
+
+    num_in = 8'd0;   #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    num_in = 8'd5;   #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    num_in = 8'd10;  #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    num_in = 8'd15;  #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    num_in = 8'd25;  #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    num_in = 8'd45;  #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    num_in = 8'd100; #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    num_in = 8'd170; #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    num_in = 8'd200; #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    num_in = 8'd255; #10;
+    $display("  %3d  | %8b |   %2h  |  %3o",
+    num_in, out, out, out);
+
+    $display("==================================");
+    $display("PROJECT 1 COMPLETE!");
+    $finish;
+  end
+
+endmodule
